@@ -11,4 +11,11 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    if session
+      session.delete(:user_id)
+    end
+    redirect_to '/'
+  end
 end
